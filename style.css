@@ -1,0 +1,693 @@
+/* --- 1. ESTILOS GENERALES Y RAÍZ --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    padding-top: 80px; /* <-- AÑADE ESTA LÍNEA */
+}
+
+a {
+    text-decoration: none;
+    color: #ffA500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 2. COMPONENTES REUTILIZABLES --- */
+.section-container {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-container h2 {
+    text-align: center;
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffA500;
+    color: #000000;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.6);
+}
+
+/* --- 3. HEADER / NAVEGACIÓN --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 165, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #ffA500;
+    border-bottom-color: #ffA500;
+}
+
+/* --- 4. SECCIÓN INICIO (HERO) --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 5%;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* --- 4. SECCIÓN INICIO (HERO) --- */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 100px 5%;
+    overflow: hidden; /* Evita que el robot se salga en animaciones */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Columna de texto */
+.hero-text {
+    flex-basis: 50%; /* Ocupa el 50% del espacio */
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Columna de imagen (Robot) */
+.hero-image {
+    flex-basis: 50%;
+    position: relative;
+    height: 500px; /* Altura del contenedor, ajústala si es necesario */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alineamos los elementos abajo */
+    perspective: 1000px; /* Activa la perspectiva 3D para los hijos */
+}
+
+#robot-body {
+    max-width: 40%;
+    height: auto;
+    transition: transform 0.2s ease-out;
+    bottom: 43.2%;
+}
+
+.robot-part {
+    max-width: 65%; /* <-- REDUCE ESTE VALOR (antes era 80%) */
+    height: auto;
+    position: absolute;
+    transition: transform 0.2s ease-out;
+    bottom: 18%;
+}
+
+/* --- ESTILOS PARA LA CABEZA 3D --- */
+.robot-scene {
+    position: absolute;
+    bottom: 75%; 
+    width: 120px; /* Define el tamaño del cubo */
+    height: 120px;
+}
+
+.robot-cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out; /* Suaviza la rotación */
+}
+
+.cube-face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #1c1c1e; /* Color base oscuro del cubo */
+    border: 1.5px solid #333;
+}
+
+/* Posicionamiento de cada cara en el espacio 3D */
+.front  { transform: rotateY(0deg) translateZ(60px); }
+.back   { transform: rotateY(180deg) translateZ(60px); }
+.right  { transform: rotateY(90deg) translateZ(60px); }
+.left   { transform: rotateY(-90deg) translateZ(60px); }
+.top    { transform: rotateX(90deg) translateZ(60px); }
+.bottom { transform: rotateX(-90deg) translateZ(60px); }
+
+/* --- Creación de los Ojos en la Cara Frontal --- */
+.front::before,
+.front::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;  /* Tamaño de los ojos */
+    height: 25px;
+    border-radius: 50%;
+    background-color: #00ff26; /* Color rosa brillante */
+    box-shadow: 0 0 15px #00ff1a, 0 0 25px #15ff00; /* Efecto de brillo */
+}
+
+.front::before {
+    left: 25px; /* Posición del ojo izquierdo */
+}
+
+.front::after {
+    right: 25px; /* Posición del ojo derecho */
+}
+
+/* --- 5. SECCIÓN QUIÉNES SOMOS --- */
+.about-us-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.about-card {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.5);
+}
+
+.about-card h3 {
+    color: #ffA500;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* --- 6. SECCIÓN SERVICIOS (TARJETAS GIRATORIAS) --- */
+/* Esta es una copia de los estilos que ya teníamos, asegurando consistencia */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: transparent;
+    width: 80%;
+    aspect-ratio: 9 / 12;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s, box-shadow 0.4s;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.7);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border: 1px solid #ffA500;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+}
+
+.card-back h3 {
+    color: #ffA500;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.card-back p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.card-back .costo {
+    font-weight: 600;
+    background-color: rgba(255, 165, 0, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+
+/* --- 7. SECCIÓN CHARLAS Y TALLERES (GALERÍA) --- */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.6);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%; /* <-- AÑADE ESTO */
+    object-fit: cover; /* <-- AÑADE ESTO */
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img{
+    transform: scale(1.1);
+}
+
+/* --- 8. SECCIÓN BLOG --- */
+.blog-preview-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.blog-post-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.5);
+}
+
+.blog-post-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-post-card h3 {
+    font-size: 1.3rem;
+    color: #ffA500;
+    padding: 20px 20px 10px 20px;
+}
+
+.blog-post-card p {
+    padding: 0 20px 20px 20px;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+.blog-post-card .read-more {
+    display: block;
+    padding: 15px 20px;
+    background-color: #333;
+    color: #ffA500;
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post-card .read-more:hover {
+    background-color: #ffA500;
+    color: #000;
+}
+
+
+/* --- 9. SECCIÓN CONTACTO --- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #ffA500;
+    box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.4);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    border: 2px solid #555;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #ffA500;
+    border-color: #ffA500;
+    color: #000;
+}
+
+#contacto {
+    position: relative;
+    overflow: hidden;
+    z-index: 5; /* Asegura que no se superponga con otras secciones */
+}
+
+/* Contenedor de la animación (lo posiciona en el fondo) */
+#lottie-contact-animation {
+    position: absolute;
+
+    top: 22%;   /* <-- EMPUJA HACIA ABAJO (aumenta para bajar más) */
+    right: 11%;  /* <-- EMPUJA HACIA LA IZQUIERDA (aumenta para mover más a la izquierda) */
+    
+    width: 25%; /* Ajusta el ancho si es necesario */
+    height: 25%; /* Ajusta el alto si es necesario */
+    z-index: 1;
+}
+
+/* Contenido del contacto (lo posiciona al frente) */
+.contact-content {
+    position: relative;
+    z-index: 2; /* Lo trae al frente */
+}
+
+/* --- 10. FOOTER --- */
+.main-footer {
+    text-align: center; /* <-- ESTA LÍNEA CENTRA EL TEXTO */
+    padding: 40px 5%;
+    background-color: #111;
+    border-top: 1px solid #333;
+}
+
+/* --- 11. RESPONSIVIDAD (MEDIA QUERIES) --- */
+@media (max-width: 992px) {
+    .section-container h2 {
+        font-size: 2.1rem;
+    }
+
+    .about-us-container, 
+    .card-container, 
+    .gallery-container, 
+    .blog-preview-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        text-align: center;
+    }
+}
+
+/* --- AJUSTE DE TAMAÑO PARA LA CABEZA DEL ROBOT EN MÓVIL --- */
+.robot-scene {
+    width: 80px;  /* Reducimos el tamaño (antes era 120px o 90px) */
+    height: 80px;
+}
+
+.cube-face {
+    width: 80px;
+    height: 80px;
+}
+
+/* IMPORTANTE: Actualizamos translateZ a la mitad del nuevo tamaño (40px) */
+.front  { transform: rotateY(0deg) translateZ(40px); }
+.back   { transform: rotateY(180deg) translateZ(40px); }
+.right  { transform: rotateY(90deg) translateZ(40px); }
+.left   { transform: rotateY(-90deg) translateZ(40px); }
+.top    { transform: rotateX(90deg) translateZ(40px); }
+.bottom { transform: rotateX(-90deg) translateZ(40px); }
+
+/* También ajustamos el tamaño y posición de los ojos */
+.front::before,
+.front::after {
+    width: 18px;
+    height: 18px;
+}
+
+.front::before {
+    left: 18px;
+}
+
+.front::after {
+    right: 18px;
+}
+
+/* --- ANIMACIONES PERSONALIZADAS CON AOS --- */
+[data-aos="sprout"] {
+    transform: scaleY(0); /* Estado inicial: encogido verticalmente */
+    opacity: 0;
+    transform-origin: bottom; /* La animación crece desde la base */
+    transition-property: transform, opacity;
+}
+
+body.aos-animate [data-aos="sprout"] {
+    transform: scaleY(1); /* Estado final: tamaño completo */
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        /* En un proyecto real, aquí se implementaría un menú hamburguesa con JS */
+        /* Por ahora, lo ocultamos para simplificar */
+        display: none; 
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-us-container, 
+    .card-container, 
+    .gallery-container, 
+    .blog-preview-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card-container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-container h2 {
+        font-size: 2rem;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+/* --- Media Query para Responsividad --- */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+       
+    }
+
+
+    .hero-text {
+        text-align: center;
+        order: 2; /* El texto va después del robot en móvil */
+    }
+
+ .robot-scene { /* Contenedor de la cabeza */
+        /* Centramos la cabeza perfectamente */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: auto; /* Anulamos el 'bottom' del estilo de escritorio */
+    }
+
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
