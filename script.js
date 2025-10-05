@@ -11,7 +11,7 @@ particlesJS('particles-js', {
         }
       },
       "color": {
-        "value": "#ffffff" // Color de las partículas
+        "value": "#00ff26" // Color de las partículas
       },
       "shape": {
         "type": "circle", // Forma de la partícula (circle, edge, triangle, polygon, star, image)
@@ -37,7 +37,7 @@ particlesJS('particles-js', {
       "line_linked": {
         "enable": true,
         "distance": 150, // Distancia máxima para que las líneas se conecten
-        "color": "#ffffff", // Color de las líneas
+        "color": "#00ff26", // Color de las líneas
         "opacity": 0.4,
         "width": 1
       },

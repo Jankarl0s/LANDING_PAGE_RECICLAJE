@@ -11,8 +11,8 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #000000;
-    color: #e0e0e0;
+    background-color: #fff;
+    color: #000;
     overflow-x: hidden;
     padding-top: 80px; /* <-- AÑADE ESTA LÍNEA */
 }
@@ -93,7 +93,7 @@ img {
     height: 70px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 5%;
+    padding-left: 4%;
 }
 
 .logo {
@@ -129,7 +129,7 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #ffffff;
+    
     padding: 0 5%;
 }
 
@@ -165,7 +165,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    
     padding: 100px 5%;
     overflow: hidden; /* Evita que el robot se salga en animaciones */
 }
@@ -295,7 +295,6 @@ img {
 }
 
 .about-card {
-    background-color: #1a1a1a;
     padding: 30px;
     border-radius: 15px;
     border: 1px solid #333;
@@ -428,7 +427,7 @@ img {
 }
 
 .blog-post-card {
-    background-color: #1a1a1a;
+    
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid #333;
