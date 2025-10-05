@@ -148,3 +148,33 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 });
+
+/* --- CÓDIGO PARA LA VENTANA EMERGENTE DEL CALENDARIO --- */
+document.addEventListener('DOMContentLoaded', () => {
+    // ... tu otro código puede estar aquí ...
+
+    // Obtener los elementos
+    const modal = document.getElementById('calendar-modal');
+    const openBtn = document.getElementById('open-calendar-btn');
+    const closeBtn = document.querySelector('.close-button');
+
+    // Revisar si los elementos existen para evitar errores
+    if (modal && openBtn && closeBtn) {
+        // Cuando el usuario hace clic en el botón, abre la ventana
+        openBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Cuando el usuario hace clic en la (x), cierra la ventana
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Cuando el usuario hace clic fuera de la ventana, también la cierra
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+});
