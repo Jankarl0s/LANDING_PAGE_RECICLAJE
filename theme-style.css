@@ -10,3 +10,17 @@ body.dark-mode{
     color: #fff;
 }
 
+div.blog-post-card.dark-mode{
+    background-color: #000;
+    color: #fff;
+}
+
+div.about-card.dark-mode{
+    background-color: #000;
+    color: #fff;
+}
+
+div.hero-section.dark.mode{
+  background-color: #000;
+    color: #fff;
+}
