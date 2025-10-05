@@ -11,8 +11,8 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #000000;
-    color: #e0e0e0;
+    background-color: #fff;
+    color: #000;
     overflow-x: hidden;
     padding-top: 80px; /* <-- AÑADE ESTA LÍNEA */
 }
@@ -93,7 +93,7 @@ img {
     height: 70px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 5%;
+    padding-left: 4%;
 }
 
 .logo {
