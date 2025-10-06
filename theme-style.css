@@ -6,21 +6,37 @@
 }
 
 body.dark-mode{
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 div.blog-post-card.dark-mode{
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 div.about-card.dark-mode{
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 div.hero-section.dark.mode{
   background-color: #000;
-    color: #fff;
+  color: #fff;
 }
+
+.card-back.dark-mode{  
+  background-color: #000;
+  color: #fff;
+}
+
+.m.dark-mode{
+  background-color: #000;
+  color: #fff;
+}
+
+.main-footer.dark-mode{
+  background-color:#000; 
+  color: #DEE2E6;
+}
+
