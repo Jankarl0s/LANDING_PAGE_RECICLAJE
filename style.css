@@ -14,7 +14,7 @@ body {
     background-color: #fff;
     color: #000;
     overflow-x: hidden;
-    padding-top: 80px; /* <-- AÑADE ESTA LÍNEA */
+    padding-top: 80px;
 }
 
 a {
@@ -129,7 +129,7 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+
     padding: 0 5%;
 }
 
@@ -165,9 +165,10 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     padding: 100px 5%;
-    overflow: hidden; /* Evita que el robot se salga en animaciones */
+    overflow: hidden;
+    /* Evita que el robot se salga en animaciones */
 }
 
 #particles-js {
@@ -192,7 +193,8 @@ img {
 
 /* Columna de texto */
 .hero-text {
-    flex-basis: 50%; /* Ocupa el 50% del espacio */
+    flex-basis: 50%;
+    /* Ocupa el 50% del espacio */
     text-align: left;
 }
 
@@ -210,11 +212,14 @@ img {
 .hero-image {
     flex-basis: 50%;
     position: relative;
-    height: 500px; /* Altura del contenedor, ajústala si es necesario */
+    height: 500px;
+    /* Altura del contenedor, ajústala si es necesario */
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Alineamos los elementos abajo */
-    perspective: 1000px; /* Activa la perspectiva 3D para los hijos */
+    align-items: flex-end;
+    /* Alineamos los elementos abajo */
+    perspective: 1000px;
+    /* Activa la perspectiva 3D para los hijos */
 }
 
 #robot-body {
@@ -225,7 +230,8 @@ img {
 }
 
 .robot-part {
-    max-width: 65%; /* <-- REDUCE ESTE VALOR (antes era 80%) */
+    max-width: 65%;
+    /* <-- REDUCE ESTE VALOR (antes era 80%) */
     height: auto;
     position: absolute;
     transition: transform 0.2s ease-out;
@@ -235,8 +241,9 @@ img {
 /* --- ESTILOS PARA LA CABEZA 3D --- */
 .robot-scene {
     position: absolute;
-    bottom: 75%; 
-    width: 120px; /* Define el tamaño del cubo */
+    bottom: 75%;
+    width: 120px;
+    /* Define el tamaño del cubo */
     height: 120px;
 }
 
@@ -245,24 +252,43 @@ img {
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.2s ease-out; /* Suaviza la rotación */
+    transition: transform 0.2s ease-out;
+    /* Suaviza la rotación */
 }
 
 .cube-face {
     position: absolute;
     width: 120px;
     height: 120px;
-    background-color: #1c1c1e; /* Color base oscuro del cubo */
+    background-color: #1c1c1e;
+    /* Color base oscuro del cubo */
     border: 1.5px solid #333;
 }
 
 /* Posicionamiento de cada cara en el espacio 3D */
-.front  { transform: rotateY(0deg) translateZ(60px); }
-.back   { transform: rotateY(180deg) translateZ(60px); }
-.right  { transform: rotateY(90deg) translateZ(60px); }
-.left   { transform: rotateY(-90deg) translateZ(60px); }
-.top    { transform: rotateX(90deg) translateZ(60px); }
-.bottom { transform: rotateX(-90deg) translateZ(60px); }
+.front {
+    transform: rotateY(0deg) translateZ(60px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(60px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(60px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(60px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(60px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(60px);
+}
 
 /* --- Creación de los Ojos en la Cara Frontal --- */
 .front::before,
@@ -271,19 +297,24 @@ img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 25px;  /* Tamaño de los ojos */
+    width: 25px;
+    /* Tamaño de los ojos */
     height: 25px;
     border-radius: 50%;
-    background-color: #00ff26; /* Color rosa brillante */
-    box-shadow: 0 0 15px #00ff1a, 0 0 25px #15ff00; /* Efecto de brillo */
+    background-color: #00ff26;
+    /* Color rosa brillante */
+    box-shadow: 0 0 15px #00ff1a, 0 0 25px #15ff00;
+    /* Efecto de brillo */
 }
 
 .front::before {
-    left: 25px; /* Posición del ojo izquierdo */
+    left: 25px;
+    /* Posición del ojo izquierdo */
 }
 
 .front::after {
-    right: 25px; /* Posición del ojo derecho */
+    right: 25px;
+    /* Posición del ojo derecho */
 }
 
 /* --- 5. SECCIÓN QUIÉNES SOMOS --- */
@@ -341,7 +372,8 @@ img {
     box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.7);
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -409,12 +441,14 @@ img {
 
 .gallery-item img {
     width: 100%;
-    height: 100%; /* <-- AÑADE ESTO */
-    object-fit: cover; /* <-- AÑADE ESTO */
+    height: 100%;
+    /* <-- AÑADE ESTO */
+    object-fit: cover;
+    /* <-- AÑADE ESTO */
     transition: transform 0.4s ease;
 }
 
-.gallery-item:hover img{
+.gallery-item:hover img {
     transform: scale(1.1);
 }
 
@@ -426,7 +460,7 @@ img {
 }
 
 .blog-post-card {
-    
+
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid #333;
@@ -453,14 +487,15 @@ img {
 
 .blog-post-card p {
     padding: 0 20px 20px 20px;
-    flex-grow: 1; /* Empuja el botón hacia abajo */
+    flex-grow: 1;
+    /* Empuja el botón hacia abajo */
 }
 
 .blog-post-card .read-more {
     display: block;
     padding: 15px 20px;
-    
-    
+
+
     text-align: center;
     font-weight: 600;
     transition: background-color 0.3s ease;
@@ -481,7 +516,8 @@ img {
     margin-top: 50px;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
@@ -496,7 +532,8 @@ img {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: #ffA500;
     box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.4);
@@ -512,7 +549,7 @@ img {
 }
 
 .social-icons a {
-    
+
     font-size: 1.5rem;
     margin-right: 20px;
     border: 2px solid #555;
@@ -534,32 +571,39 @@ img {
 #contacto {
     position: relative;
     overflow: hidden;
-    z-index: 5; /* Asegura que no se superponga con otras secciones */
+    z-index: 5;
+    /* Asegura que no se superponga con otras secciones */
 }
 
 /* Contenedor de la animación (lo posiciona en el fondo) */
 #lottie-contact-animation {
     position: absolute;
 
-    top: 22%;   /* <-- EMPUJA HACIA ABAJO (aumenta para bajar más) */
-    right: 11%;  /* <-- EMPUJA HACIA LA IZQUIERDA (aumenta para mover más a la izquierda) */
-    
-    width: 25%; /* Ajusta el ancho si es necesario */
-    height: 25%; /* Ajusta el alto si es necesario */
+    top: 22%;
+    /* <-- EMPUJA HACIA ABAJO (aumenta para bajar más) */
+    right: 11%;
+    /* <-- EMPUJA HACIA LA IZQUIERDA (aumenta para mover más a la izquierda) */
+
+    width: 25%;
+    /* Ajusta el ancho si es necesario */
+    height: 25%;
+    /* Ajusta el alto si es necesario */
     z-index: 1;
 }
 
 /* Contenido del contacto (lo posiciona al frente) */
 .contact-content {
     position: relative;
-    z-index: 2; /* Lo trae al frente */
+    z-index: 2;
+    /* Lo trae al frente */
 }
 
 /* --- 10. FOOTER --- */
 .main-footer {
-    text-align: center; /* <-- ESTA LÍNEA CENTRA EL TEXTO */
-    padding: 40px 5%;  
-   border-top: 1px solid #ffa500;
+    text-align: center;
+    /* <-- ESTA LÍNEA CENTRA EL TEXTO */
+    padding: 40px 5%;
+    border-top: 1px solid #ffa500;
 }
 
 /* --- 11. RESPONSIVIDAD (MEDIA QUERIES) --- */
@@ -568,17 +612,17 @@ img {
         font-size: 2.1rem;
     }
 
-    .about-us-container, 
-    .card-container, 
-    .gallery-container, 
+    .about-us-container,
+    .card-container,
+    .gallery-container,
     .blog-preview-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .contact-container {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-info {
         text-align: center;
     }
@@ -586,7 +630,8 @@ img {
 
 /* --- AJUSTE DE TAMAÑO PARA LA CABEZA DEL ROBOT EN MÓVIL --- */
 .robot-scene {
-    width: 80px;  /* Reducimos el tamaño (antes era 120px o 90px) */
+    width: 80px;
+    /* Reducimos el tamaño (antes era 120px o 90px) */
     height: 80px;
 }
 
@@ -596,12 +641,29 @@ img {
 }
 
 /* IMPORTANTE: Actualizamos translateZ a la mitad del nuevo tamaño (40px) */
-.front  { transform: rotateY(0deg) translateZ(40px); }
-.back   { transform: rotateY(180deg) translateZ(40px); }
-.right  { transform: rotateY(90deg) translateZ(40px); }
-.left   { transform: rotateY(-90deg) translateZ(40px); }
-.top    { transform: rotateX(90deg) translateZ(40px); }
-.bottom { transform: rotateX(-90deg) translateZ(40px); }
+.front {
+    transform: rotateY(0deg) translateZ(40px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(40px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(40px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(40px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(40px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(40px);
+}
 
 /* También ajustamos el tamaño y posición de los ojos */
 .front::before,
@@ -620,14 +682,17 @@ img {
 
 /* --- ANIMACIONES PERSONALIZADAS CON AOS --- */
 [data-aos="sprout"] {
-    transform: scaleY(0); /* Estado inicial: encogido verticalmente */
+    transform: scaleY(0);
+    /* Estado inicial: encogido verticalmente */
     opacity: 0;
-    transform-origin: bottom; /* La animación crece desde la base */
+    transform-origin: bottom;
+    /* La animación crece desde la base */
     transition-property: transform, opacity;
 }
 
 body.aos-animate [data-aos="sprout"] {
-    transform: scaleY(1); /* Estado final: tamaño completo */
+    transform: scaleY(1);
+    /* Estado final: tamaño completo */
     opacity: 1;
 }
 
@@ -646,7 +711,8 @@ body.aos-animate [data-aos="sprout"] {
     text-align: center;
 }
 
-.blog-post p, .blog-post li {
+.blog-post p,
+.blog-post li {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 20px;
@@ -660,21 +726,24 @@ body.aos-animate [data-aos="sprout"] {
     margin-bottom: 20px;
 }
 
-.blog-post ul, .blog-post ol {
+.blog-post ul,
+.blog-post ol {
     padding-left: 30px;
 }
 
 .blog-main-image {
-    width: 90%; 
-    display: block; 
+    width: 90%;
+    display: block;
     margin: 0 auto 40px auto;
     border-radius: 15px;
 }
 
 .blog-inline-image {
-    width: 50%; /* <-- REDUCE ESTE PORCENTAJE A TU GUSTO */
+    width: 50%;
+    /* <-- REDUCE ESTE PORCENTAJE A TU GUSTO */
     display: block;
-    margin: 20px auto; /* Centra la imagen */
+    margin: 20px auto;
+    /* Centra la imagen */
     border-radius: 10px;
 }
 
@@ -685,15 +754,18 @@ body.aos-animate [data-aos="sprout"] {
 
 /* --- 12. ESTILOS PARA LA VENTANA EMERGENTE (MODAL) --- */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none;
+    /* Oculto por defecto */
     position: fixed;
-    z-index: 2000; /* Se asegura de que esté por encima de todo */
+    z-index: 2000;
+    /* Se asegura de que esté por encima de todo */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo oscuro semitransparente */
     backdrop-filter: blur(5px);
 }
 
@@ -732,24 +804,31 @@ body.aos-animate [data-aos="sprout"] {
 
 /* Animación de entrada */
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @media (max-width: 768px) {
     .nav-menu {
         /* En un proyecto real, aquí se implementaría un menú hamburguesa con JS */
         /* Por ahora, lo ocultamos para simplificar */
-        display: none; 
+        display: none;
     }
 
     .hero-content h1 {
         font-size: 2rem;
     }
 
-    .about-us-container, 
-    .card-container, 
-    .gallery-container, 
+    .about-us-container,
+    .card-container,
+    .gallery-container,
     .blog-preview-container {
         grid-template-columns: 1fr;
     }
@@ -778,34 +857,39 @@ body.aos-animate [data-aos="sprout"] {
     .section-container h2 {
         font-size: 2rem;
     }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
 }
+
 /* --- Media Query para Responsividad --- */
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;
         text-align: center;
-       
+
     }
 
 
     .hero-text {
         text-align: center;
-        order: 2; /* El texto va después del robot en móvil */
+        order: 2;
+        /* El texto va después del robot en móvil */
     }
 
- .robot-scene { /* Contenedor de la cabeza */
+    .robot-scene {
+        /* Contenedor de la cabeza */
         /* Centramos la cabeza perfectamente */
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        bottom: auto; /* Anulamos el 'bottom' del estilo de escritorio */
+        bottom: auto;
+        /* Anulamos el 'bottom' del estilo de escritorio */
     }
 
-    }
     .hero-text h1 {
         font-size: 2rem;
         margin-bottom: 20px;
     }
+}
