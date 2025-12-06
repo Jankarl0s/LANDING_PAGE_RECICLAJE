@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reciclaje de E-Waste - Soluciones Sostenibles</title>
-    
-    <link rel="stylesheet" href="style.css"> 
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme-style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    </head>
+</head>
+
 <body>
 
-   <header class="main-header">
+    <header class="main-header">
         <nav class="navbar">
-         <a href="index.html#inicio" class="logo">i-Waste</a>
+            <a href="index.html#inicio" class="logo">TuLogo</a>
             <ul class="nav-menu">
                 <li><a href="index.html#inicio">Inicio</a></li>
                 <li><a href="index.html#quienes-somos">Quiénes Somos</a></li>
@@ -24,49 +27,84 @@
                 <li><a href="index.html#talleres">Talleres</a></li>
                 <li><a href="index.html#blog">Blog</a></li>
                 <li><a href="index.html#contacto">Contacto</a></li>
+                <button id="theme-toggle" class="icon-button" aria-label="Cambiar tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z">
+                        </path>
+                        <path d="M12,4c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,3.6,12.6,4,12,4z"></path>
+                        <path d="M12,24c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,23.6,12.6,24,12,24z"></path>
+                        <path
+                            d="M5.6,6.6c-0.3,0-0.5-0.1-0.7-0.3L3.5,4.9c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C6.2,6.5,5.9,6.6,5.6,6.6z">
+                        </path>
+                        <path
+                            d="M19.8,20.8c-0.3,0-0.5-0.1-0.7-0.3l-1.4-1.4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C20.3,20.7,20,20.8,19.8,20.8z">
+                        </path>
+                        <path d="M3,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S3.6,13,3,13z"></path>
+                        <path d="M23,13h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>
+                        <path
+                            d="M4.2,20.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C4.7,20.7,4.5,20.8,4.2,20.8z">
+                        </path>
+                        <path
+                            d="M18.4,6.6c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C18.9,6.5,18.6,6.6,18.4,6.6z">
+                        </path>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z">
+                        </path>
+                    </svg>
+                </button>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="hero-section">
-            <div id="particles-js"></div> 
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Soluciones Innovadoras para el Reciclaje de i-Waste</h1>
-                        <p>Transformamos tus desechos electrónicos en un futuro sostenible. Ayudamos a empresas y personas a gestionar sus residuos de manera responsable y segura.</p>
-                         <button id="open-calendar-btn" class="cta-button">Agenda una Recolección</button>
-                    </div>
-
-                    <div class="hero-image">
-                            <img src="img/base.png" alt="Base del robot" class="robot-part" id="robot-base">
-                            <img src="img/cuerpo.png" alt="Cuerpo del robot de reciclaje" class="robot-part" id="robot-body">
-                        <div class="robot-scene">
-                        <div class="robot-cube" id="robot-cube">
-                        <div class="cube-face front"></div>
-                        <div class="cube-face back"></div>
-                        <div class="cube-face right"></div>
-                        <div class="cube-face left"></div>
-                        <div class="cube-face top"></div>
-                        <div class="cube-face bottom"></div>
-                    </div>
+            <div id="particles-js"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Soluciones Innovadoras para el Reciclaje de E-Waste</h1>
+                    <p>Transformamos tus desechos electrónicos en un futuro sostenible. Ayudamos a empresas y personas a
+                        gestionar sus residuos de manera responsable y segura.</p>
+                    <button id="open-calendar-btn" class="cta-button">Agenda una Recolección</button>
                 </div>
+
+                <div class="hero-image">
+                    <img src="img/base.png" alt="Base del robot" class="robot-part" id="robot-base">
+                    <img src="img/cuerpo.png" alt="Cuerpo del robot de reciclaje" class="robot-part" id="robot-body">
+                    <div class="robot-scene">
+                        <div class="robot-cube" id="robot-cube">
+                            <div class="cube-face front"></div>
+                            <div class="cube-face back"></div>
+                            <div class="cube-face right"></div>
+                            <div class="cube-face left"></div>
+                            <div class="cube-face top"></div>
+                            <div class="cube-face bottom"></div>
+                        </div>
+                    </div>
         </section>
 
         <section id="quienes-somos" class="section-container">
             <h2>Comprometidos con el Planeta</h2>
             <div class="about-us-container">
-                 <div class="about-card" data-aos="fade-right" data-aos-duration="1500">
+                <div class="about-card" data-aos="fade-right" data-aos-duration="1500">
                     <h3>Misión</h3>
-                    <p>Facilitar la transición hacia una economía circular, ofreciendo soluciones accesibles y seguras para la gestión y el reciclaje de residuos electrónicos.</p>
+                    <p>Facilitar la transición hacia una economía circular, ofreciendo soluciones accesibles y seguras
+                        para la gestión y el reciclaje de residuos electrónicos.</p>
                 </div>
-                 <div class="about-card" data-aos="fade-up"data-aos-duration="1500">
+                <div class="about-card" data-aos="fade-up" data-aos-duration="1500">
                     <h3>Visión</h3>
-                    <p>Ser la empresa líder y el referente de confianza en México en la gestión de e-waste, impulsando una cultura de reciclaje tecnológico.</p>
+                    <p>Ser la empresa líder y el referente de confianza en México en la gestión de e-waste, impulsando
+                        una cultura de reciclaje tecnológico.</p>
                 </div>
                 <div class="about-card" data-aos="fade-left" data-aos-duration="1500">
-                    <h3>Referentes en i-Waste</h3>
-                    <p>Aplicamos los más altos estándares para garantizar la destrucción segura de datos y la máxima recuperación de materiales, convirtiéndonos en el socio ideal para empresas y personas comprometidas con la sostenibilidad</p>
+                    <h3>Referentes en E-Waste</h3>
+                    <p>Aplicamos los más altos estándares para garantizar la destrucción segura de datos y la máxima
+                        recuperación de materiales, convirtiéndonos en el socio ideal para empresas y personas
+                        comprometidas con la sostenibilidad</p>
                 </div>
             </div>
         </section>
@@ -74,14 +112,16 @@
         <section id="servicios" class="section-container">
             <h2>Servicios que Ofrecemos</h2>
             <div class="card-container">
-                 <div class="card" data-aos="fade-up">
+                <div class="card" data-aos="fade-up">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="https://lasempresasverdes.com/wp-content/uploads/2021/07/reciclaje-electronicos-1024x576.jpg" alt="Servicio de Recolección de Electrónicos">
+                            <img src="https://lasempresasverdes.com/wp-content/uploads/2021/07/reciclaje-electronicos-1024x576.jpg"
+                                alt="Servicio de Recolección de Electrónicos">
                         </div>
                         <div class="card-back">
                             <h3>Recolección de Electrónicos</h3>
-                            <p>Pasamos a tu domicilio o empresa a recolectar equipos en desuso como computadoras, celulares y más.</p>
+                            <p>Pasamos a tu domicilio o empresa a recolectar equipos en desuso como computadoras,
+                                celulares y más.</p>
                             <span class="costo">Costo: Desde $0</span>
                         </div>
                     </div>
@@ -89,11 +129,13 @@
                 <div class="card" data-aos="fade-up" data-aos-delay="400">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="https://www.valoradata.com/files/uploads/2017/11/Destruccion-Confidencial-Descon-ValoraData.jpg" alt="Servicio de Destrucción Segura de Datos">
+                            <img src="https://www.valoradata.com/files/uploads/2017/11/Destruccion-Confidencial-Descon-ValoraData.jpg"
+                                alt="Servicio de Destrucción Segura de Datos">
                         </div>
                         <div class="card-back">
                             <h3>Destrucción Segura de Datos</h3>
-                            <p>Garantizamos la eliminación permanente y certificada de la información sensible en tus dispositivos.</p>
+                            <p>Garantizamos la eliminación permanente y certificada de la información sensible en tus
+                                dispositivos.</p>
                             <span class="costo">Costo: Contáctanos</span>
                         </div>
                     </div>
@@ -101,11 +143,13 @@
                 <div class="card" data-aos="fade-up" data-aos-delay="600">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="https://impactoverde.com.pe/wp-content/uploads/2018/09/consultoria-ambiental.jpg" alt="Servicio de Consultoría Ambiental">
+                            <img src="https://impactoverde.com.pe/wp-content/uploads/2018/09/consultoria-ambiental.jpg"
+                                alt="Servicio de Consultoría Ambiental">
                         </div>
                         <div class="card-back">
                             <h3>Consultoría Ambiental</h3>
-                            <p>Te asesoramos para desarrollar un plan de manejo de residuos que cumpla con la normativa vigente.</p>
+                            <p>Te asesoramos para desarrollar un plan de manejo de residuos que cumpla con la normativa
+                                vigente.</p>
                             <span class="costo">Costo: Contáctanos</span>
                         </div>
                     </div>
@@ -115,88 +159,109 @@
 
         <section id="talleres" class="section-container">
             <h2>Educación para un Futuro Sostenible</h2>
-            <p class="section-description">Impartimos charlas y talleres en empresas y escuelas para concientizar sobre la importancia del reciclaje electrónico y cómo hacerlo correctamente.</p>
+            <p class="section-description">Impartimos charlas y talleres en empresas y escuelas para concientizar sobre
+                la importancia del reciclaje electrónico y cómo hacerlo correctamente.</p>
             <div class="gallery-container">
-                <div class="gallery-item" data-aos="zoom-in-up"><img src="https://reciclamas.com.mx/wp-content/uploads/2023/09/2-2-1.jpg" alt="Galería Taller 1"></div>
-                <div class="gallery-item" data-aos="zoom-in-up" data-aos-delay="200"><img src="https://blog.vicensvives.com/wp-content/uploads/2024/05/4.png" alt="Galería Taller 2"></div>
-                <div class="gallery-item" data-aos="zoom-in-up" data-aos-delay="400"><img src="https://reciclamas.com.mx/wp-content/uploads/2024/07/IMG-BLOGS-2024-07-03T164119.858.jpg" alt="Galería Taller 3"></div>
+                <div class="gallery-item" data-aos="zoom-in-up"><img
+                        src="https://reciclamas.com.mx/wp-content/uploads/2023/09/2-2-1.jpg" alt="Galería Taller 1">
+                </div>
+                <div class="gallery-item" data-aos="zoom-in-up" data-aos-delay="200"><img
+                        src="https://blog.vicensvives.com/wp-content/uploads/2024/05/4.png" alt="Galería Taller 2">
+                </div>
+                <div class="gallery-item" data-aos="zoom-in-up" data-aos-delay="400"><img src="img/taller-reciclaje.png"
+                        alt="Galería Taller 3"></div>
             </div>
         </section>
 
         <section id="blog" class="section-container">
             <h2>Aprende Más Sobre el Reciclaje</h2>
-            <p class="section-description">En nuestro blog encontrarás información valiosa, guías y noticias sobre el mundo del e-waste y la sostenibilidad.</p>
+            <p class="section-description">En nuestro blog encontrarás información valiosa, guías y noticias sobre el
+                mundo del e-waste y la sostenibilidad.</p>
             <div class="blog-preview-container">
                 <div class="blog-post-card" data-aos="fade-up">
-                    <img src="https://avatarenergia.com/wp-content/uploads/2019/03/campana_sobre_el_manejo_de_residuos_de_aparatos_electronicos_y_electricos_.jpg" alt="Imagen Artículo 1">
+                    <img src="https://avatarenergia.com/wp-content/uploads/2019/03/campana_sobre_el_manejo_de_residuos_de_aparatos_electronicos_y_electricos_.jpg"
+                        alt="Imagen Artículo 1">
                     <h3>Beneficios del reciclaje electrónico</h3>
-                    <p>El reciclaje de residuos electrónicos, o e-waste, va mucho más allá de simplemente deshacerse de aparatos viejos. Es una acción fundamental con un impacto profundo y positivo en nuestro planeta, economía y sociedad.</p>
+                    <p>El reciclaje de residuos electrónicos, o e-waste, va mucho más allá de simplemente deshacerse de
+                        aparatos viejos. Es una acción fundamental con un impacto profundo y positivo en nuestro
+                        planeta, economía y sociedad.</p>
                     <a href="beneficios-reciclaje.html" class="read-more">Leer Más</a>
                 </div>
                 <div class="blog-post-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://i0.wp.com/aerzenlatam.com/wp-content/uploads/2023/05/reciclaje-de-aparatos-electronicos-aerzen.jpg?fit=750%2C500&ssl=1" alt="Imagen Artículo 2">
+                    <img src="https://i0.wp.com/aerzenlatam.com/wp-content/uploads/2023/05/reciclaje-de-aparatos-electronicos-aerzen.jpg?fit=750%2C500&ssl=1"
+                        alt="Imagen Artículo 2">
                     <h3>¿Qué es el reciclaje de aparatos electrónicos?</h3>
-                    <p>Cada año, el mundo genera millones de toneladas de "e-waste" o basura electrónica. Pero, ¿qué significa realmente reciclar estos aparatos y por qué es tan crucial?</p>
+                    <p>Cada año, el mundo genera millones de toneladas de "e-waste" o basura electrónica. Pero, ¿qué
+                        significa realmente reciclar estos aparatos y por qué es tan crucial?</p>
                     <a href="que-es-reciclaje.html" class="read-more">Leer Más</a>
                 </div>
                 <div class="blog-post-card" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://guiadeposgrados.mx/wp-content/uploads/2020/05/D%C3%ADa-Internacional-del-reciclaje_-una-fecha-para-crear-conciencia.jpg" alt="Imagen Artículo 3">
+                    <img src="https://guiadeposgrados.mx/wp-content/uploads/2020/05/D%C3%ADa-Internacional-del-reciclaje_-una-fecha-para-crear-conciencia.jpg"
+                        alt="Imagen Artículo 3">
                     <h3>Empresas mexicanas de reciclaje de electrónicos</h3>
-                    <p>En México, la conciencia sobre el reciclaje de e-waste ha crecido, y con ella, el número de empresas que ofrecen este servicio. Sin embargo, es vital saber elegir una compañía responsable para asegurar que tus residuos reciban un tratamiento adecuado</p>
+                    <p>En México, la conciencia sobre el reciclaje de e-waste ha crecido, y con ella, el número de
+                        empresas que ofrecen este servicio. Sin embargo, es vital saber elegir una compañía responsable
+                        para asegurar que tus residuos reciban un tratamiento adecuado</p>
                     <a href="empresas-mexicanas.html" class="read-more">Leer Más</a>
                 </div>
             </div>
         </section>
 
         <section id="contacto" class="section-container">
-    <div id="lottie-contact-animation"></div>
+            <div id="lottie-contact-animation"></div>
 
-    <div class="contact-content">
-        <h2>Agenda una Recolección o Contáctanos</h2>
-        <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-                <textarea name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                <button type="submit" class="cta-button">Enviar Mensaje</button>
-            </form>
-            <div class="contact-info">
-                <p><strong>Teléfono:</strong> +52 123 456 7890</p>
-                <p><strong>Email:</strong> contacto@tuempresa.com</p>
-                <div class="social-icons">
-                    <a href="#">FB</a>
-                    <a href="#">IN</a>
-                    <a href="#">LN</a>
+            <div class="contact-content">
+                <h2>Agenda una Recolección o Contáctanos</h2>
+                <div class="contact-container">
+                    <form class="contact-form">
+                        <input class="m" type="text" name="name" placeholder="Tu Nombre" required>
+                        <input class="m" type="email" name="email" placeholder="Tu Correo Electrónico" required>
+                        <textarea class="m" name="message" rows="5" placeholder="Escribe tu mensaje aquí..."
+                            required></textarea>
+                        <button type="submit" class="cta-button">Enviar Mensaje</button>
+                    </form>
+                    <div class="contact-info">
+                        <p><strong>Teléfono:</strong> +52 123 456 7890</p>
+                        <p><strong>Email:</strong> contacto@tuempresa.com</p>
+                        <div class="social-icons">
+                            <a href="#">FB</a>
+                            <a href="#">IN</a>
+                            <a href="#">LN</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-    </main><div id="calendar-modal" class="modal">
+        </section>
+    </main>
+    <div id="calendar-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>Agenda tu Recolección</h2>
-            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ01mAX9AMGLKNk5jfVWbf4svsXYfxK2Z2kB0BGBiZGk8dlURTiJ8mGSJ984A0IilZvEi4ddTLAM?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+            <iframe
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ01mAX9AMGLKNk5jfVWbf4svsXYfxK2Z2kB0BGBiZGk8dlURTiJ8mGSJ984A0IilZvEi4ddTLAM?gv=true"
+                style="border: 0" width="100%" height="600" frameborder="0"></iframe>
         </div>
     </div>
 
     <footer class="main-footer">
-    <p>&copy; 2025 Tu Empresa de Reciclaje. Todos los derechos reservados.</p>
-    <p><a href="#">Aviso de Privacidad</a></p>
+        <p>&copy; 2025 Tu Empresa de Reciclaje. Todos los derechos reservados.</p>
+        <p><a href="#">Aviso de Privacidad</a></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    <script src="theme-script.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-         AOS.init({
-        duration: 1000, // Duración de la animación en milisegundos
-         once: true // La animación solo ocurre una vez
-            });
+    <script>
+        AOS.init({
+            duration: 1000, // Duración de la animación en milisegundos
+            once: true // La animación solo ocurre una vez
+        });
     </script>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </body>
+
 </html>
